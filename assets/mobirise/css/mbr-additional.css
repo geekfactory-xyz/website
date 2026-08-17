@@ -1475,10 +1475,10 @@ a {
 }
 .cid-v8Fapn9iM4 .mbr-section-text,
 .cid-v8Fapn9iM4 .mbr-section-btn {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-v8Fapn9iM4 .mbr-section-subtitle {
-  color: #000000;
+  color: #ffffff;
 }
 .cid-tLek7gQhG7 {
   padding-top: 6rem;
@@ -1518,99 +1518,6 @@ a {
 }
 .cid-tLek7gQhG7 .card-title {
   color: #ffffff;
-}
-.cid-vmy6vtWAXc .main_wrapper {
-  position: relative;
-  height: 800px;
-  width: 100%;
-}
-.cid-vmy6vtWAXc .b_wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-@media (max-width: 991px) {
-  .cid-vmy6vtWAXc .b_wrapper {
-    position: relative;
-    width: 100%;
-    height: auto !important;
-    flex-direction: column;
-  }
-}
-.cid-vmy6vtWAXc .row {
-  margin: 0;
-}
-@media (max-width: 991px) {
-  .cid-vmy6vtWAXc .container-fluid {
-    padding: 0;
-  }
-}
-.cid-vmy6vtWAXc ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.cid-vmy6vtWAXc .item-wrapper {
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0);
-  pointer-events: fill;
-  padding: 2.25rem;
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .cid-vmy6vtWAXc .item-wrapper {
-    padding: 1.5rem;
-  }
-}
-@media (max-width: 991px) {
-  .cid-vmy6vtWAXc .item-wrapper {
-    width: 100%;
-    position: relative;
-    padding: 2rem;
-    border-radius: 0px !important;
-  }
-}
-@media (max-width: 767px) {
-  .cid-vmy6vtWAXc .item-wrapper {
-    padding: 2rem 1rem;
-  }
-}
-.cid-vmy6vtWAXc .google-map {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-}
-.cid-vmy6vtWAXc .google-map iframe {
-  height: 100%;
-  width: 100%;
-  border-radius: 0px !important;
-}
-.cid-vmy6vtWAXc .google-map [data-state-details] {
-  color: #edefeb;
-  height: 1.5em;
-  margin-top: -0.75em;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 100%;
-}
-.cid-vmy6vtWAXc .google-map[data-state] {
-  background: #edefeb;
-}
-.cid-vmy6vtWAXc .google-map[data-state="loading"] [data-state-details] {
-  display: none;
-}
-@media (max-width: 991px) {
-  .cid-vmy6vtWAXc .google-map {
-    position: static;
-  }
 }
 .cid-v8FluumI8d {
   padding-top: 0rem;
@@ -2966,7 +2873,7 @@ a {
 }
 .cid-vc5E2z6uhi .item-subtitle {
   line-height: 1.2;
-  color: #f7f7f7;
+  color: #ffffff;
   text-align: center;
 }
 .cid-vc5E2z6uhi img,
