@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEEK FACTORY — Actualités</title>
+  <meta name="description" content="Toutes les actualités, annonces et sorties de projets de GEEK FACTORY.">
+  <link rel="alternate" type="application/rss+xml" title="Flux RSS GEEK FACTORY" href="rss.xml">
+
+  <!-- Tailwind CSS -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #090A0F;
+      color: #E2E8F0;
+    }
+    .clean-card {
+      background-color: #0E1017;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .clean-card:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+    .clean-border {
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-indigo-500 selection:text-white relative min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-[#090A0F]/90 backdrop-blur-md border-b clean-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+      
+      <!-- Logo Très Gros -->
+      <a href="index.html" class="flex items-center group py-1">
+        <img src="logo.png" alt="GEEK FACTORY" class="h-14 sm:h-16 md:h-20 w-auto object-contain brightness-125 group-hover:opacity-85 transition-opacity">
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-zinc-400">
+        <a href="index.html" data-i18n="nav_home" class="hover:text-white transition-colors">Accueil</a>
+        <a href="notre-histoire.html" data-i18n="nav_story" class="hover:text-white transition-colors">Notre histoire</a>
+        <a href="actualites.html" data-i18n="nav_news" class="text-white font-semibold">Actualités</a>
+        <a href="nos-projets.html" data-i18n="nav_projects" class="hover:text-white transition-colors">Projets</a>
+        <a href="nos-guides.html" data-i18n="nav_guides" class="hover:text-white transition-colors">Guides</a>
+      </nav>
+
+      <!-- Actions, Social Icons & Language Toggle -->
+      <div class="flex items-center gap-4">
+        
+        <!-- Toggle FR / EN -->
+        <button id="lang-toggle-btn" onclick="toggleLang()" class="px-2.5 py-1 rounded-lg bg-zinc-900 border clean-border text-xs font-mono hover:border-zinc-700 transition-colors flex items-center gap-1" title="Changer de langue / Change language">
+          <span class="text-white font-bold">FR</span><span class="text-zinc-500">/</span><span class="text-zinc-400">EN</span>
+        </button>
+
+        <div class="flex items-center gap-1.5 text-zinc-400">
+          <a href="https://www.facebook.com/geekfactory.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/geekfactory.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@geekfactory.xyz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="mailto:info@geek-factory.xyz" aria-label="Courriel" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main News Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-12">
+    
+    <!-- Title Section with RSS button -->
+    <div class="border-b clean-border pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-left">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-3" data-fr="Actualités & Nouveautés" data-en="News & Announcements">
+          Actualités & Nouveautés
+        </h1>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-xl" data-fr="Suivez les dernières sorties de projets, les annonces techniques et les évolutions de l'écosystème GEEK FACTORY." data-en="Keep up with our latest project releases, technical announcements, and ecosystem updates.">
+          Suivez les dernières sorties de projets, les annonces techniques et les évolutions de l'écosystème GEEK FACTORY.
+        </p>
+      </div>
+
+      <!-- RSS Feed Button -->
+      <a href="rss.xml" class="self-start sm:self-auto inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border clean-border text-xs text-amber-400 hover:text-amber-300 transition-colors" title="S'abonner au flux RSS">
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+        <span class="font-mono font-medium">Flux RSS</span>
+      </a>
+    </div>
+
+    <!-- Feed List -->
+    <div class="space-y-6">
+      
+      <!-- Article 1: CloudBeats Studio -->
+      <article class="clean-card p-6 sm:p-8 rounded-xl space-y-4">
+        <div class="flex items-center justify-between text-xs font-mono text-zinc-500">
+          <span class="text-indigo-400 font-bold px-2 py-0.5 bg-indigo-950/60 border border-indigo-500/30 rounded" data-fr="NOUVEAU PROJET WEB" data-en="NEW WEB PROJECT">NOUVEAU PROJET WEB</span>
+          <span data-fr="10 Octobre 2026" data-en="October 10, 2026">10 Octobre 2026</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <a href="article-cloudbeats-studio.html" class="hover:text-indigo-400 transition-colors" data-fr="Lancement Officiel de CloudBeats Studio" data-en="Official Launch of CloudBeats Studio">
+            Lancement Officiel de CloudBeats Studio
+          </a>
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed" data-fr="GEEK FACTORY lance un nouveau projet web ! <strong>CloudBeats Studio</strong>, c'est un studio musical en ligne, une version améliorée de MusicalBox (Le projet MusicalBox est donc arrêté). Les instruments jouables sur le site sont un piano, un xylophone et une batterie virtuelle ! Le site propose des fonctions pratiques comme l'enregistrement audio en direct, un métronome, la personnalisation de l'apparence des instruments, un site bilingue et plus encore !" data-en="GEEK FACTORY introduces a new web app: <strong>CloudBeats Studio</strong>! An online music studio succeeding MusicalBox. Features playable virtual piano, xylophone, and drum kits with live audio recording, customizable skins, and a fully bilingual interface.">
+          GEEK FACTORY lance un nouveau projet web ! <strong>CloudBeats Studio</strong>, c'est un studio musical en ligne, une version améliorée de MusicalBox (Le projet MusicalBox est donc arrêté). Les instruments jouables sur le site sont un piano, un xylophone et une batterie virtuelle ! Le site propose des fonctions pratiques comme l'enregistrement audio en direct, un métronome, la personnalisation de l'apparence des instruments, un site bilingue et plus encore !
+        </p>
+        <div class="pt-4 border-t clean-border flex flex-wrap items-center justify-between gap-3">
+          <a href="article-cloudbeats-studio.html" class="text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg transition-colors inline-flex items-center gap-1.5" data-i18n="read_full">
+            Lire en entier →
+          </a>
+          <a href="https://cloudbeats-studio.geek-factory.xyz/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+            Ouvrir CloudBeats Studio ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 2: GameNexus v2.0 -->
+      <article class="clean-card p-6 sm:p-8 rounded-xl space-y-4">
+        <div class="flex items-center justify-between text-xs font-mono text-zinc-500">
+          <span class="text-cyan-400 font-bold px-2 py-0.5 bg-cyan-950/60 border border-cyan-500/30 rounded" data-fr="MISE À JOUR MAJEURE" data-en="MAJOR UPDATE">MISE À JOUR MAJEURE</span>
+          <span data-fr="Septembre 2026" data-en="September 2026">Septembre 2026</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <a href="article-gamenexus-v2.html" class="hover:text-cyan-400 transition-colors" data-fr="GameNexus s'est amélioré (Version 2.0)" data-en="GameNexus Has Been Upgraded (Version 2.0)">
+            GameNexus s'est amélioré (Version 2.0)
+          </a>
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed" data-fr="Le moteur de recherche de jeux-vidéos de GEEK FACTORY s'est amélioré ! Plusieurs bugs ont été réglés et de nouvelles fonctions ont été ajoutées ! Allez le voir de vous-même pour explorer plus de 10 000 jeux indexés, avec fiches descriptives, notes et plateformes." data-en="GEEK FACTORY's video game search engine just received major enhancements! Multiple bug fixes and new discovery features index over 10,000 games with detailed sheets, platforms, and community ratings.">
+          Le moteur de recherche de jeux-vidéos de GEEK FACTORY s'est amélioré ! Plusieurs bugs ont été réglés et de nouvelles fonctions ont été ajoutées ! Allez le voir de vous-même pour explorer plus de 10 000 jeux indexés, avec fiches descriptives, notes et plateformes.
+        </p>
+        <div class="pt-4 border-t clean-border flex flex-wrap items-center justify-between gap-3">
+          <a href="article-gamenexus-v2.html" class="text-xs font-semibold text-white bg-cyan-600 hover:bg-cyan-500 px-4 py-2 rounded-lg transition-colors inline-flex items-center gap-1.5" data-i18n="read_full">
+            Lire en entier →
+          </a>
+          <a href="https://gamenexus.geek-factory.xyz/" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+            Consulter GameNexus ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Article 3: Guides & Sécurité -->
+      <article class="clean-card p-6 sm:p-8 rounded-xl space-y-4">
+        <div class="flex items-center justify-between text-xs font-mono text-zinc-500">
+          <span class="text-emerald-400 font-bold px-2 py-0.5 bg-emerald-950/60 border border-emerald-500/30 rounded" data-fr="DOCUMENTATION TECH" data-en="TECH DOCUMENTATION">DOCUMENTATION TECH</span>
+          <span data-fr="Août 2026" data-en="August 2026">Août 2026</span>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <a href="article-nouveaux-guides.html" class="hover:text-emerald-400 transition-colors" data-fr="Nouveaux Guides : Réseau local et Sécurité Domotique" data-en="New Guides: Local Networking & Smart Home Security">
+            Nouveaux Guides : Réseau local et Sécurité Domotique
+          </a>
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed" data-fr="Publication de deux nouveaux guides techniques complets sur notre espace GitBook :<br>• <strong>« Quels équipements choisir pour mon réseau ? »</strong> : guide matériel pour remplacer son équipement opérateur.<br>• <strong>« Sécuriser son domicile simplement, pour pas cher ! »</strong> : approche locale et sécurisée sans abonnement récurrent." data-en="Two brand new hands-on technical manuals published on our GitBook:<br>• <strong>'What Hardware Should I Choose for My Network?'</strong>: independent hardware purchasing guide to replace ISP gear.<br>• <strong>'Securing Your Home Affordably and Simply!'</strong>: local privacy-first architecture with zero recurring fees.">
+          Publication de deux nouveaux guides techniques complets sur notre espace GitBook :
+          <br>• <strong>« Quels équipements choisir pour mon réseau ? »</strong> : guide matériel pour remplacer son équipement opérateur.
+          <br>• <strong>« Sécuriser son domicile simplement, pour pas cher ! »</strong> : approche locale et sécurisée sans abonnement récurrent.
+        </p>
+        <div class="pt-4 border-t clean-border flex flex-wrap items-center justify-between gap-3">
+          <a href="article-nouveaux-guides.html" class="text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 px-4 py-2 rounded-lg transition-colors inline-flex items-center gap-1.5" data-i18n="read_full">
+            Lire en entier →
+          </a>
+          <a href="nos-guides.html" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+            Lire les guides ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="w-full border-t clean-border py-12 px-4 sm:px-6 text-xs text-zinc-500 mt-20">
+    <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Gauche : Logo + Icônes (RSS, Facebook, Instagram, TikTok, Email) -->
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <a href="index.html" class="flex items-center">
+          <img src="logo.png" alt="GEEK FACTORY" class="h-8 w-auto object-contain brightness-110 opacity-75 hover:opacity-100 transition-opacity">
+        </a>
+        <span class="text-zinc-700">|</span>
+        <div class="flex items-center gap-1 text-zinc-400">
+          <a href="rss.xml" aria-label="Flux RSS" title="Flux RSS" class="p-1.5 rounded-lg hover:text-amber-400 hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/geekfactory.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/geekfactory.xyz/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@geekfactory.xyz" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+          <a href="mailto:info@geek-factory.xyz" aria-label="Courriel" title="Courriel (E-mail)" class="p-1.5 rounded-lg hover:text-white hover:bg-zinc-800/60 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Droite : Politique de confidentialité, Utilisation de l'IA & Copyright -->
+      <div class="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2 text-xs text-zinc-500">
+        <a href="politique-confidentialite.html" class="hover:text-zinc-300 transition-colors whitespace-nowrap">Politique de confidentialité</a>
+        <span class="text-zinc-700 hidden sm:inline">•</span>
+        <a href="utilisation-ia.html" class="hover:text-zinc-300 transition-colors whitespace-nowrap">À propos de l'utilisation de l'IA</a>
+        <span class="text-zinc-700 hidden sm:inline">•</span>
+        <span class="whitespace-nowrap">Copyright © 2026 GEEK FACTORY — Projet Éducatif Personnel</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="lang-share.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

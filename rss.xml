@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GEEK FACTORY — Actualités &amp; Nouveautés</title>
+    <link>https://geek-factory.xyz/actualites.html</link>
+    <description>Suivez les dernières sorties de projets, les annonces techniques et les évolutions de l'écosystème GEEK FACTORY.</description>
+    <language>fr-CA</language>
+    <lastBuildDate>Sun, 11 Oct 2026 23:52:49 GMT</lastBuildDate>
+    <atom:link href="https://geek-factory.xyz/rss.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2026 GEEK FACTORY</copyright>
+    <image>
+      <url>https://geek-factory.xyz/logo.png</url>
+      <title>GEEK FACTORY</title>
+      <link>https://geek-factory.xyz/</link>
+    </image>
+    <item>
+      <title>Lancement Officiel de CloudBeats Studio</title>
+      <link>https://geek-factory.xyz/article-cloudbeats-studio.html</link>
+      <guid isPermaLink="true">https://geek-factory.xyz/article-cloudbeats-studio.html</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 GMT</pubDate>
+      <category>NOUVEAU PROJET WEB</category>
+      <description>GEEK FACTORY lance un nouveau projet web ! CloudBeats Studio , c&#x27;est un studio musical en ligne, une version améliorée de MusicalBox (Le projet MusicalBox est donc arrêté). Les instruments jouables sur le site sont un piano, un xylophone et une batterie virtuelle ! Le site propose des fonctions pratiques comme l&#x27;enregistrement audio en direct, un métronome, la personnalisation de l&#x27;apparence des instruments, un site bilingue et plus encore !</description>
+    </item>
+    <item>
+      <title>GameNexus s&#x27;est amélioré (Version 2.0)</title>
+      <link>https://geek-factory.xyz/article-gamenexus-v2.html</link>
+      <guid isPermaLink="true">https://geek-factory.xyz/article-gamenexus-v2.html</guid>
+      <pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
+      <category>MISE À JOUR MAJEURE</category>
+      <description>Le moteur de recherche de jeux-vidéos de GEEK FACTORY s&#x27;est amélioré ! Plusieurs bugs ont été réglés et de nouvelles fonctions ont été ajoutées ! Allez le voir de vous-même pour explorer plus de 10 000 jeux indexés, avec fiches descriptives, notes et plateformes.</description>
+    </item>
+    <item>
+      <title>Nouveaux Guides : Réseau local et Sécurité Domotique</title>
+      <link>https://geek-factory.xyz/article-nouveaux-guides.html</link>
+      <guid isPermaLink="true">https://geek-factory.xyz/article-nouveaux-guides.html</guid>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 GMT</pubDate>
+      <category>DOCUMENTATION TECH</category>
+      <description>Publication de deux nouveaux guides techniques complets sur notre espace GitBook : • « Quels équipements choisir pour mon réseau ? » : guide matériel pour remplacer son équipement opérateur. • « Sécuriser son domicile simplement, pour pas cher ! » : approche locale et sécurisée sans abonnement récurrent.</description>
+    </item>
+  </channel>
+</rss>

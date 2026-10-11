@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: geek-factory
+    env: static
+    buildCommand: node sync_rss.js
+    staticPublishPath: .
+    headers:
+      - path: /rss.xml
+        name: Content-Type
+        value: application/xml; charset=utf-8

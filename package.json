@@ -1,0 +1,8 @@
+{
+  "name": "geek-factory-website",
+  "version": "1.0.0",
+  "description": "Site officiel de GEEK FACTORY",
+  "scripts": {
+    "build": "node sync_rss.js"
+  }
+}
