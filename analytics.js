@@ -3,7 +3,7 @@
 // Conforme RGPD (Europe), Loi 25 (Québec / Canada) et CCPA/CPRA (États-Unis)
 // ==============================================================================
 
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Remplacer par votre identifiant de mesure Google Analytics 4
+const GA_MEASUREMENT_ID = 'G-WB8XZENW16'; // Remplacer par votre identifiant de mesure Google Analytics 4
 
 // Drapeau officiel Google pour bloquer tout tracking GA
 function disableGoogleAnalyticsTracking(id) {
